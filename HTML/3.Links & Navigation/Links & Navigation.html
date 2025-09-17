@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links & Navigation Examples</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+        section { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; }
+        h2 { color: #333; }
+        .back-to-top { display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1 id="top">Links & Navigation Examples</h1>
+    
+    <nav>
+        <h2>Quick Navigation</h2>
+        <ul>
+            <li><a href="#absolute-relative">Absolute vs Relative Links</a></li>
+            <li><a href="#target-attribute">Target Attribute</a></li>
+            <li><a href="#bookmarks">Bookmark Links</a></li>
+            <li><a href="#email-phone">Email & Phone Links</a></li>
+        </ul>
+    </nav>
+    
+    <section id="absolute-relative">
+        <h2>Absolute vs Relative Links</h2>
+        
+        <h3>Absolute Link (External):</h3>
+        <p><a href="https://www.wikipedia.org">Visit Wikipedia</a></p>
+        
+        <h3>Relative Links (Internal):</h3>
+        <p>Assuming we have these files in our project:</p>
+        <ul>
+            <li><a href="about.html">About Page (same directory)</a></li>
+            <li><a href="products/widget.html">Product Page (subdirectory)</a></li>
+            <li><a href="../index.html">Home Page (parent directory)</a></li>
+        </ul>
+        
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </section>
+    
+    <section id="target-attribute">
+        <h2>Target Attribute Examples</h2>
+        
+        <h3>Open in Same Tab (default):</h3>
+        <p><a href="https://example.com" target="_self">Example.com (same tab)</a></p>
+        
+        <h3>Open in New Tab:</h3>
+        <p><a href="https://example.com" target="_blank" rel="noopener noreferrer">
+            Example.com (new tab - secure)
+        </a></p>
+        
+        <h3>Other Target Values (for frames):</h3>
+        <p><a href="page.html" target="_parent">Open in Parent Frame</a></p>
+        <p><a href="page.html" target="_top">Open in Full Window</a></p>
+        
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </section>
+    
+    <section id="bookmarks">
+        <h2>Bookmark Links</h2>
+        
+        <h3>Jump to sections on this page:</h3>
+        <ul>
+            <li><a href="#chapter1">Chapter 1: Introduction</a></li>
+            <li><a href="#chapter2">Chapter 2: Main Content</a></li>
+            <li><a href="#chapter3">Chapter 3: Conclusion</a></li>
+        </ul>
+        
+        <h3 id="chapter1">Chapter 1: Introduction</h3>
+        <p>This is the introduction section. Bookmark links allow users to navigate to specific parts of a page.</p>
+        
+        <h3 id="chapter2">Chapter 2: Main Content</h3>
+        <p>This is the main content section. You can create as many bookmarks as needed throughout your document.</p>
+        
+        <h3 id="chapter3">Chapter 3: Conclusion</h3>
+        <p>This is the conclusion section. Bookmark links are especially useful for long documents.</p>
+        
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </section>
+    
+    <section id="email-phone">
+        <h2>Email & Phone Links</h2>
+        
+        <h3>Email Links:</h3>
+        <p><a href="mailto:contact@example.com">Send us an email</a></p>
+        <p><a href="mailto:contact@example.com?subject=Question&body=Hello,%20I%20have%20a%20question">
+            Email with pre-filled subject and body
+        </a></p>
+        
+        <h3>Phone Links:</h3>
+        <p><a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+        <p><a href="tel:0123456789">0123 456 789</a></p>
+        
+        <a href="#top" class="back-to-top">Back to Top</a>
+    </section>
+    
+    <footer>
+        <p>This example demonstrates various types of links and navigation techniques in HTML.</p>
+        <p><a href="#top">Back to Top</a></p>
+    </footer>
+</body>
+</html>
