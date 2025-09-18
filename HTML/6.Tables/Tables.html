@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Table Example</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid rgb(24, 255, 8);
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #da78e5;
+    }
+    tr {
+      height: 40px;
+    }
+    tfoot {
+      background-color: #6fb0ee;
+    }
+  </style>
+</head>
+<body>
+  <table border="2" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th colspan="2">Course Details</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">Web Development</td>
+        <td>HTML & CSS</td>
+        <td>$100</td>
+      </tr>
+      <tr>
+        <td>JavaScript</td>
+        <td>$150</td>
+      </tr>
+      <tr>
+        <td>Data Science</td>
+        <td>Python</td>
+        <td>$200</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">Total Courses: 3</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
