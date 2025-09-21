@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geolocation API Example</title>
+
+  
+</head>
+<body style="background-color: lightgrey; display: flex; justify-content: center; align-items: center;">
+    <div style=" width: 60%; text-align: center; background-color: rgb(110, 182, 198); padding: 20px; border: 5px solid rgb(255, 255, 255); border-radius: 25px; margin: 50px; ">
+    <h1 style="color: rgb(72, 72, 157); text-align: center; font-size: 50px; background-color: rgb(216, 216, 135); border-radius: 15px; border: 3px solid white;">Geolocation API Example</h1>
+  <button onclick="getLocation()"  style="padding: 10px; background: #ffffff; border: 3px solid rgb(119, 119, 119); border-radius: 15px; font-size: 25px; font-family: Verdana; font-weight: 700; color: rgb(170, 55, 55);">Get My Location</button>
+  <p id="location" style="background-color: rgb(200, 205, 205); padding: 20px; border: 4px solid white; border-radius: 25px; font-size: medium; font-family: sans-serif; font-weight: 600; "></p>
+</div>
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        document.getElementById("location").innerText = "Geolocation is not supported.";
+      }
+    }
+
+    function showPosition(position) {
+      document.getElementById("location").innerText = 
+        `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+    }
+
+    function showError(error) {
+      document.getElementById("location").innerText = `Error: ${error.message}`;
+    }
+  </script>
+</body>
+</html>
