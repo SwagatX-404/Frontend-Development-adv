@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 APIs & Advanced Features Playground</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { margin-bottom: 40px; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+    h2 { color: darkblue; }
+    #dropZone { width: 200px; height: 200px; border: 2px dashed gray; display: flex; align-items: center; justify-content: center; margin-top: 10px; }
+    canvas { border: 1px solid black; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>HTML5 APIs & Advanced Features Playground</h1>
+
+  <!-- 1. Geolocation API -->
+  <section>
+    <h2>🌍 Geolocation API</h2>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="geoOutput"></p>
+  </section>
+
+  <!-- 2. Drag & Drop API -->
+  <section>
+    <h2>🖱️ Drag & Drop API</h2>
+    <div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">Drop Here</div>
+    <img id="drag1" src="https://via.placeholder.com/100" draggable="true" ondragstart="drag(event)">
+  </section>
+
+  <!-- 3. Web Storage -->
+  <section>
+    <h2>💾 Web Storage</h2>
+    <button onclick="saveData()">Save Data</button>
+    <button onclick="getData()">Get Data</button>
+    <p id="storageOutput"></p>
+  </section>
+
+  <!-- 4. Web Workers -->
+  <section>
+    <h2>⚡ Web Worker</h2>
+    <button onclick="startWorker()">Start Worker</button>
+    <p id="workerOutput"></p>
+  </section>
+
+  <!-- 5. Canvas API -->
+  <section>
+    <h2>🎨 Canvas API</h2>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+  </section>
+
+  <!-- 6. SVG -->
+  <section>
+    <h2>🖼️ SVG Example</h2>
+    <svg width="200" height="200">
+      <circle cx="100" cy="100" r="80" stroke="blue" stroke-width="4" fill="lightblue" />
+    </svg>
+  </section>
+
+  <!-- 7. Audio & Video API -->
+  <section>
+    <h2>🎵🎥 Audio & Video API</h2>
+    <video id="myVideo" width="320" height="240" controls>
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <br>
+    <button onclick="playVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+  </section>
+
+  <script>
+    // 1. Geolocation
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        document.getElementById("geoOutput").innerHTML = "Geolocation not supported.";
+      }
+    }
+    function showPosition(position) {
+      document.getElementById("geoOutput").innerHTML =
+        "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    }
+    function showError(error) {
+      document.getElementById("geoOutput").innerHTML = error.message;
+    }
+
+    // 2. Drag & Drop
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+
+    // 3. Web Storage
+    function saveData() {
+      localStorage.setItem("username", "Swagat");
+      alert("Data saved to localStorage!");
+    }
+    function getData() {
+      let user = localStorage.getItem("username");
+      document.getElementById("storageOutput").innerText = "Hello " + user;
+    }
+
+    // 4. Web Worker
+    let worker;
+    function startWorker() {
+      if (window.Worker) {
+        if (!worker) {
+          worker = new Worker(URL.createObjectURL(new Blob([`
+            let i = 0;
+            function timedCount() {
+              i++;
+              postMessage(i);
+              setTimeout(timedCount, 1000);
+            }
+            timedCount();
+          `], { type: 'application/javascript' })));
+        }
+        worker.onmessage = function(e) {
+          document.getElementById("workerOutput").innerHTML = "Count: " + e.data;
+        };
+      }
+    }
+
+    // 5. Canvas API
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 150, 100);
+    ctx.beginPath();
+    ctx.arc(200, 100, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+
+    // 7. Audio & Video API
+    let video = document.getElementById("myVideo");
+    function playVideo() { video.play(); }
+    function pauseVideo() { video.pause(); }
+  </script>
+</body>
+</html>
