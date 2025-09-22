@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive & Modern HTML Demo</title>
+  <style>
+    body {
+      font-family: monospace, sans-serif;
+      word-spacing: 10px;
+      letter-spacing: 4px;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgb(35, 35, 119);
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      background: #333;
+    }
+
+    nav ul li {
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      background: #555;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li a {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+      header {
+        font-size: 18px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      background: #f4f4f4;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Accessible header -->
+  <header role="banner">
+    <h1>🌍 Responsive & Modern HTML Demo</h1>
+  </header>
+
+  <!-- Accessible navigation -->
+  <nav role="navigation">
+    <ul>
+      <li><a href="#" tabindex="1">Home</a></li>
+      <li><a href="#" tabindex="2">About</a></li>
+      <li><a href="#" tabindex="3">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main role="main">
+    <h2>Responsive Image Example</h2>
+    <!-- Responsive Picture Element -->
+    <picture>
+      <source media="(min-width: 800px)" srcset="large.jpg">
+      <source media="(min-width: 500px)" srcset="medium.jpg">
+      <img src="small.jpg" alt="Beautiful landscape with mountains and river">
+    </picture>
+
+    <p>
+      Resize the browser window to see the image and layout change.  
+      This page uses <strong>meta viewport</strong>, <strong>media queries</strong>, <strong>picture element</strong>, and <strong>accessibility features</strong>.
+    </p>
+  </main>
+
+  <!-- Accessible footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 Responsive Demo | Built with ❤️</p>
+  </footer>
+</body>
+</html>
