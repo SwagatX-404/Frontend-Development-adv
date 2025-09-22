@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best SEO & HTML Practices | Demo Website</title>
+  <meta name="description" content="Learn about SEO-friendly HTML structure, meta tags, semantic elements, accessibility, and best practices for modern websites.">
+
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="Best SEO & HTML Practices">
+  <meta property="og:description" content="An example of SEO best practices in HTML with semantic tags, accessibility, and responsive design.">
+  <meta property="og:image" content="seo-demo.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://example.com/seo-demo">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Best SEO & HTML Practices">
+  <meta name="twitter:description" content="SEO-friendly HTML structure with semantic tags and accessibility.">
+  <meta name="twitter:image" content="seo-demo.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
+    header, nav, main, footer { padding: 20px; }
+    header { background: #0044cc; color: white; }
+    nav ul { list-style: none; display: flex; gap: 15px; padding: 0; margin: 0; }
+    nav ul li a { color: white; text-decoration: none; }
+    nav ul li a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+    article { margin-bottom: 20px; }
+    footer { background: #f4f4f4; text-align: center; padding: 10px; }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header role="banner">
+    <h1>Best SEO & HTML Practices</h1>
+    <p>Your guide to writing SEO-friendly and accessible HTML pages.</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav role="navigation">
+    <ul>
+      <li><a href="#about" title="Learn about SEO Basics">About</a></li>
+      <li><a href="#tips" title="See SEO Best Practices">SEO Tips</a></li>
+      <li><a href="https://www.google.com/search/howsearchworks/" target="_blank" rel="noopener">Learn More</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main role="main">
+    <article id="about">
+      <h2>🔹 About SEO</h2>
+      <p>
+        Search Engine Optimization (SEO) helps websites appear higher in search results.
+        Good SEO involves <strong>semantic HTML</strong>, <strong>clean structure</strong>, 
+        <strong>meta tags</strong>, and <strong>accessibility</strong>.
+      </p>
+      <img src="seo-demo.jpg" alt="Illustration showing SEO best practices" width="400">
+    </article>
+
+    <article id="tips">
+      <h2>🔹 SEO Best Practices</h2>
+      <h3>1. Use Semantic HTML</h3>
+      <p>Use `<header>`, `<main>`, `<article>`, `<footer>` for structure.</p>
+
+      <h3>2. Optimize Titles & Descriptions</h3>
+      <p>Each page should have a unique `<title>` and `<meta description>`.</p>
+
+      <h3>3. Use Alt Text for Images</h3>
+      <p>Describe images for accessibility and search engines.</p>
+
+      <h3>4. Improve Accessibility</h3>
+      <p>Use ARIA roles, proper heading order, and `tabindex` for navigation.</p>
+
+      <h3>5. Mobile Friendly</h3>
+      <p>Always use the `<meta name="viewport">` tag and responsive design.</p>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 SEO Demo Site | Built with ❤️</p>
+    <p><a href="sitemap.xml">Sitemap</a> | <a href="robots.txt">Robots.txt</a></p>
+  </footer>
+</body>
+</html>
